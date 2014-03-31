@@ -49,6 +49,7 @@ def load_forecast(key, inLat, inLong, time=None, units="auto", lazy=False,
         thr = threading.Thread(target=load_async, args=(baseURL,),
                                kwargs={'callback': callback})
         thr.start()
+        return thr
 
 
 def make_forecast(response):
